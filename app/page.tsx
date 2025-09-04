@@ -1,4 +1,6 @@
+'use client';
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Lanyard from "./components/Lanyard/Lanyard";
 import PixelBlast from "./components/PixelBlast/PixelBlast";
 import TextType from "./components/TextType/TextType";
@@ -6,8 +8,43 @@ import RotatingText from "./components/RotatingText/RotatingText";
 import TextPressure from "./components/TextPressure/TextPressure";
 import BlurText from "./components/BlurText/BlurText";
 import Navbar from "./components/Navbar/Navbar";
+import CountUp from "./components/CountUp/CountUp";
+import CircularText from "./components/CircularText/CircularText";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [countDone, setCountDone] = useState(false);
+
+  useEffect(() => {
+    if (countDone) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 300); // tambahan delay supaya smooth
+      return () => clearTimeout(timer);
+    }
+  }, [countDone]);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-70 bg-black flex items-center justify-center z-50">
+          <CircularText
+            text="WELCOME☆TO☆MY☆PORTFOLIO☆"
+            onHover="speedUp"
+            spinDuration={20}
+            className="absolute w-full h-full"
+          />
+          <CountUp
+            from={0}
+            to={102}
+            separator=","
+            duration={4}
+            className="absolute text-4xl font-bold"
+            onEnd={() => setLoading(false)}
+          />
+        </div>
+    );
+  }
+
   return (
     <main className="bg-[#020617] text-white">
       <Navbar />
@@ -42,7 +79,9 @@ export default function Home() {
               <br />
               <br />
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold text-white font-bold">I'm Ready For Job</h1>
+                <h1 className="text-2xl font-bold text-white font-bold">
+                  I'm Ready For Job
+                </h1>
                 <RotatingText
                   texts={['Web Design', 'Design UI/UX', 'AI Enthusiast', 'Software Development']}
                   mainClassName="px-2 sm:px-2 md:px-3 bg-[#a0b1f9] text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-2xl font-bold inline-flex transition-all"
