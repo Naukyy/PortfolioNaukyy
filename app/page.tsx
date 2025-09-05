@@ -12,6 +12,17 @@ import CountUp from "./components/CountUp/CountUp";
 import CircularText from "./components/CircularText/CircularText";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
 import GradientText from "./components/GradientText/GradientText";
+import LogoLoop from "./components/LogoLoop/LogoLoop";
+import ScrollVelocity from "./components/ScrollVelocity/ScrollVelocity";
+import ClickSpark from "./components/ClickSpark/ClickSpark";
+import { 
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
+  SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
+  SiJavascript, 
+  SiNodedotjs, SiExpress, SiSpringboot, SiDjango, SiLaravel, SiPhp, 
+  SiMysql, SiPostgresql, SiMongodb, SiSqlite, SiFirebase, 
+  SiGit, SiGithub, SiFigma, SiJupyter, SiLinux 
+} from "react-icons/si";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -64,8 +75,54 @@ export default function Home() {
     );
   }
 
+  const techLogos = [
+    // === Frontend ===
+    { node: <SiReact />, title: "React", href: "https://react.dev" },
+    { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+    { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/docs/Web/HTML" },
+    { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/docs/Web/CSS" },
+    { node: <SiBootstrap />, title: "Bootstrap", href: "https://getbootstrap.com" },
+    { node: <SiSass />, title: "Sass", href: "https://sass-lang.com" },
+    { node: <SiVuedotjs />, title: "Vue.js", href: "https://vuejs.org" },
+    { node: <SiAngular />, title: "Angular", href: "https://angular.io" },
+    { node: <SiNuxtdotjs />, title: "Nuxt.js", href: "https://nuxt.com" },
+    { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+
+    // === Backend ===
+    { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+    { node: <SiExpress />, title: "Express.js", href: "https://expressjs.com" },
+    { node: <SiSpringboot />, title: "Spring Boot", href: "https://spring.io/projects/spring-boot" },
+    { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com" },
+    { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com" },
+    { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
+
+    // === Database ===
+    { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com" },
+    { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+    { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+    { node: <SiSqlite />, title: "SQLite", href: "https://www.sqlite.org" },
+    { node: <SiFirebase />, title: "Firebase", href: "https://firebase.google.com" },
+
+
+    // === Tools ===
+    { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+    { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+    { node: <SiFigma />, title: "Figma", href: "https://figma.com" },
+    { node: <SiJupyter />, title: "Jupyter Notebook", href: "https://jupyter.org" },
+    { node: <SiLinux />, title: "Linux", href: "https://www.linux.org" },
+  ];
+
   return (
     <main className="bg-[#020617] text-white">
+      <ClickSpark
+        sparkColor='#fff'
+        sparkSize={10}
+        sparkRadius={35}
+        sparkCount={10}
+        duration={400}
+      >
       <Navbar />
 
       <section id="home" className="relative min-h-screen overflow-x-hidden">
@@ -162,7 +219,7 @@ export default function Home() {
 
               <div>
                 <BlurText
-                  text="A passionate Informatics student at Tanjungpura University with strong interest in UI/UX design, and artificial intelligence, eager to keep learning and growing every day."
+                  text="✌︎︎ Hi, I'm a passionate Informatics student at Tanjungpura University with strong interest in UI/UX design, and artificial intelligence, eager to keep learning and growing every day."
                   delay={100}
                   animateBy="words"
                   direction="top"
@@ -191,7 +248,7 @@ export default function Home() {
                     <a href="#contact">Contact Me</a>
                   </GradientText>
                 </AnimatedContent>
-                </div>
+              </div>
             </div>
 
             <div className="col-span-6">
@@ -201,12 +258,68 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="h-screen flex items-center justify-center">
-        <h2 className="text-4xl font-bold">About Section</h2>
+      <section id="about" className="h-screen px-10 py-20">
+        <div>
+          <ScrollVelocity
+            texts={['React ✧ Bits', 'Scroll Down']} 
+            velocity={100} 
+            className="custom-scroll-text"
+          />
+        </div>
       </section>
 
-      <section id="projects" className="h-screen flex items-center justify-center bg-slate-900">
-        <h2 className="text-4xl font-bold">Projects Section</h2>
+
+      <section id="projects" className="h-screen px-10 py-20">
+        <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
+          <LogoLoop
+            logos={[
+              // === Frontend ===
+              { node: <SiReact />, title: "React", href: "https://react.dev" },
+              { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+              { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+              { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+              { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/docs/Web/HTML" },
+              { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/docs/Web/CSS" },
+              { node: <SiBootstrap />, title: "Bootstrap", href: "https://getbootstrap.com" },
+              { node: <SiSass />, title: "Sass", href: "https://sass-lang.com" },
+              { node: <SiVuedotjs />, title: "Vue.js", href: "https://vuejs.org" },
+              { node: <SiAngular />, title: "Angular", href: "https://angular.io" },
+              { node: <SiNuxtdotjs />, title: "Nuxt.js", href: "https://nuxt.com" },
+              { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+
+              // === Backend ===
+              { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+              { node: <SiExpress />, title: "Express.js", href: "https://expressjs.com" },
+              { node: <SiSpringboot />, title: "Spring Boot", href: "https://spring.io/projects/spring-boot" },
+              { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com" },
+              { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com" },
+              { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
+
+              // === Database ===
+              { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com" },
+              { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
+              { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+              { node: <SiSqlite />, title: "SQLite", href: "https://www.sqlite.org" },
+              { node: <SiFirebase />, title: "Firebase", href: "https://firebase.google.com" },
+
+              // === Tools ===
+              { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+              { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+              { node: <SiFigma />, title: "Figma", href: "https://figma.com" },
+              { node: <SiJupyter />, title: "Jupyter Notebook", href: "https://jupyter.org" },
+              { node: <SiLinux />, title: "Linux", href: "https://www.linux.org" },
+            ]}
+            speed={70}
+            direction="left"
+            logoHeight={50}
+            gap={50}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#020617"
+            ariaLabel="Technology partners"
+          />
+        </div>
       </section>
 
       <section id="certificates" className="h-screen flex items-center justify-center">
@@ -216,6 +329,7 @@ export default function Home() {
       <section id="contact" className="h-screen flex items-center justify-center bg-slate-900">
         <h2 className="text-4xl font-bold">Contact</h2>
       </section>
+      </ClickSpark>
     </main>
   );
 }
