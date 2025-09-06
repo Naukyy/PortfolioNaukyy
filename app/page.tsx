@@ -15,6 +15,9 @@ import GradientText from "./components/GradientText/GradientText";
 import LogoLoop from "./components/LogoLoop/LogoLoop";
 import ScrollVelocity from "./components/ScrollVelocity/ScrollVelocity";
 import ClickSpark from "./components/ClickSpark/ClickSpark";
+import ProfileCard from "./components/ProfilCards/ProfileCard";
+import ScrollFloat from "./components/ScrollFloat/ScrollFloat";
+import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
@@ -258,17 +261,94 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="h-screen px-10 py-20">
-        <div>
-          <ScrollVelocity
-            texts={['React ✧ Bits', 'Scroll Down']} 
-            velocity={100} 
-            className="custom-scroll-text"
-          />
+      <section id="about" className="min-h-screen px-10 py-20 flex flex-col">
+        <ScrollVelocity
+          texts={[
+            "Development ✧ Frontend ✧ Backend ✧ Design ✧",
+            "Know me better ✧ Scroll Down ✧",
+          ]}
+          velocity={70}
+          className="custom-scroll-text"
+        />
+        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <div className="mt-12 rounded-2xl border border-purple-500 bg-purple-950/30 shadow-[0_0_25px_rgba(168,85,247,0.8)] p-10">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
+            <div className="w-full md:w-1/3 flex justify-center">
+            <AnimatedContent
+                  distance={100}
+                  direction="vertical"
+                  reverse={false}
+                  duration={2}
+                  ease="power.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1}
+                  threshold={0.1}
+                  delay={0.5}
+                >
+                <ProfileCard
+                  name="Naufal Zaky R"
+                  title="Full-Stack Developer"
+                  handle="zakykyyy"
+                  status="Online"
+                  contactText="Contact Me"
+                  avatarUrl="/assets/gambar2.jpg"
+                  miniAvatarUrl="/assets/gambar3.jpg"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  enableMobileTilt={true}
+                  onContactClick={() =>
+                    window.open("https://www.instagram.com/zakykyyy/", "_blank")
+                  }
+                />
+              </AnimatedContent>
+            </div>
+            <div className="w-full md:w-2/3 flex flex-col space-y-8">
+              <div>
+                <ScrollFloat
+                  animationDuration={1}
+                  ease="back.inOut(2)"
+                  scrollStart="center bottom+=50%"
+                  scrollEnd="bottom bottom-=40%"
+                  containerClassName="text-left"
+                  textClassName="text-[#B19EEF]"
+                  stagger={0.05}
+                >
+                  Let me introduce myself
+                </ScrollFloat>
+              </div>
+              <div>
+                <ScrollReveal
+                  baseOpacity={0.1}
+                  enableBlur={true}
+                  baseRotation={0}
+                  blurStrength={0}
+                  containerClassName="text-left"
+                  wordAnimationEnd="center center"
+                >
+                  Hello! I’m Naufal Zaky Ramadhan, a passionate Full-Stack Developer with a strong
+                  interest in creating modern, interactive, and scalable web applications.
+                  I enjoy exploring new technologies, designing seamless user experiences,
+                  and building products that bring ideas to life.
+                </ScrollReveal>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
 
+      <br></br>
+      <br></br>
+      <br></br>
+      
       <section id="projects" className="h-screen px-10 py-20">
         <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
           <LogoLoop
