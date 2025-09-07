@@ -18,6 +18,7 @@ import ClickSpark from "./components/ClickSpark/ClickSpark";
 import ProfileCard from "./components/ProfilCards/ProfileCard";
 import ScrollFloat from "./components/ScrollFloat/ScrollFloat";
 import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
+import About from "./components/AboutSection/about";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
@@ -39,6 +40,15 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [countDone]);
+  
+  // Definisikan items untuk Navbar
+  const navItems = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#certificates', label: 'Certificates' },
+    { href: '#contact', label: 'Contact' },
+  ];
 
   if (loading) {
     return (
@@ -108,7 +118,6 @@ export default function Home() {
     { node: <SiSqlite />, title: "SQLite", href: "https://www.sqlite.org" },
     { node: <SiFirebase />, title: "Firebase", href: "https://firebase.google.com" },
 
-
     // === Tools ===
     { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
     { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
@@ -120,13 +129,23 @@ export default function Home() {
   return (
     <main className="bg-[#020617] text-white">
       <ClickSpark
-        sparkColor='#fff'
+        sparkColor='#B19EEF'
         sparkSize={10}
         sparkRadius={35}
         sparkCount={10}
         duration={400}
       >
-      <Navbar />
+      {/* Navbar dengan props yang diminta */}
+      <Navbar
+        items={navItems}
+        particleCount={15}
+        particleDistances={[90, 10]}
+        particleR={100}
+        initialActiveIndex={0}
+        animationTime={600}
+        timeVariance={300}
+        colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+      />
 
       <section id="home" className="relative min-h-screen overflow-x-hidden">
         <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full">
@@ -285,7 +304,7 @@ export default function Home() {
                   distance={100}
                   direction="vertical"
                   reverse={false}
-                  duration={2}
+                  duration={0.5}
                   ease="power.out"
                   initialOpacity={0}
                   animateOpacity
@@ -321,7 +340,7 @@ export default function Home() {
                   textClassName="text-[#B19EEF]"
                   stagger={0.05}
                 >
-                  Let me introduce myself
+                  Let me introduce myself... 
                 </ScrollFloat>
               </div>
               <div>
@@ -342,6 +361,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <About />
       </section>
 
 
