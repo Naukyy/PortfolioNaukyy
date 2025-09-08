@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // Import motion yang diperlukan
+import { motion } from "framer-motion"; // Tambahkan import ini
 import AboutTitle from "./AboutTitle";
 import ExperienceTimeline from "./ExperienceTimeline";
 import SkillsSection from "./SkillsSection";
+import TechnologiesSection from "./TechnologiesSection";
 
 const About: React.FC = () => {
   const [hasTitleAnimated, setHasTitleAnimated] = useState(false);
@@ -26,6 +27,9 @@ const About: React.FC = () => {
       
       {/* Skills section - Terpisah dalam komponen sendiri */}
       <SkillsSection />
+
+      {/* Technologies section - Komponen baru */}
+      <TechnologiesSection />
 
       {/* Call to action */}
       <motion.div 

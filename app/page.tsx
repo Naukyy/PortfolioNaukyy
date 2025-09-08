@@ -19,6 +19,7 @@ import ProfileCard from "./components/ProfilCards/ProfileCard";
 import ScrollFloat from "./components/ScrollFloat/ScrollFloat";
 import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
 import About from "./components/AboutSection/about";
+import CircularGallery from "./components/CircularGallery/CircularGallery";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
@@ -300,18 +301,6 @@ export default function Home() {
         <div className="mt-12 rounded-2xl border border-purple-500 bg-purple-950/30 shadow-[0_0_25px_rgba(168,85,247,0.8)] p-10">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
             <div className="w-full md:w-1/3 flex justify-center">
-            <AnimatedContent
-                  distance={100}
-                  direction="vertical"
-                  reverse={false}
-                  duration={0.5}
-                  ease="power.out"
-                  initialOpacity={0}
-                  animateOpacity
-                  scale={1}
-                  threshold={0.1}
-                  delay={0.5}
-                >
                 <ProfileCard
                   name="Naufal Zaky R"
                   title="Full-Stack Developer"
@@ -327,7 +316,6 @@ export default function Home() {
                     window.open("https://www.instagram.com/zakykyyy/", "_blank")
                   }
                 />
-              </AnimatedContent>
             </div>
             <div className="w-full md:w-2/3 flex flex-col space-y-8">
               <div>
@@ -365,6 +353,9 @@ export default function Home() {
         <br></br>
         <br></br>
         <About />
+        <div style={{ height: '600px', position: 'relative' }}>
+          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02}/>
+        </div>
       </section>
 
 

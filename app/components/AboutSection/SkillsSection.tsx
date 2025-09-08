@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useScroll, useTransform, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const skills = [
@@ -65,14 +65,26 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => {
 };
 
 const SkillsSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Animasi untuk fade in/out berdasarkan scroll position - SAMA DENGAN TECHNOLOGIESSECTION
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
+
   return (
     <motion.div 
+      ref={sectionRef}
       className="w-full max-w-4xl mt-40 p-8 rounded-3xl backdrop-blur-md bg-gradient-to-b from-purple-900/30 to-indigo-900/30 border border-purple-500/30 relative overflow-hidden"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true, margin: "0px 0px -100px 0px" }}
       style={{
+        opacity,
+        scale,
+        y,
         boxShadow: "0 0 25px rgba(177, 158, 239, 0.3)"
       }}
     >
