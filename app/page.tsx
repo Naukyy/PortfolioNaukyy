@@ -22,6 +22,7 @@ import About from "./components/AboutSection/about";
 import CircularGallery from "./components/CircularGallery/CircularGallery";
 import ProjectSection from "./components/ProjectSection/ProjectSection";
 import FAQSection from "./components/FAQSection/FAQSection";
+import CertificatesSection from "./components/CertificationSection/CertificationSection";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
@@ -32,6 +33,30 @@ import {
 } from "react-icons/si";
 
 export default function Home() {
+
+  const sampleCertificates = [
+    {
+      id: 1,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/path/to/certificate-image.jpg',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+    // Tambahkan 24+ sertifikat lainnya di sini
+  ];
+
+  const sampleBadges = [
+    {
+      id: 1,
+      title: 'JavaScript Expert',
+      imageUrl: '/path/to/badge-image.png',
+      description: 'Diberikan untuk penguasaan JavaScript yang luar biasa',
+      achievementDate: 'Maret 2023'
+    },
+    // Tambahkan badges lainnya di sini
+  ];
 
   const projects = [
     {
@@ -495,7 +520,14 @@ export default function Home() {
 
       
       <section id="certificates" className="h-screen flex items-center justify-center">
-        <h2 className="text-4xl font-bold">Certificates Section</h2>
+        <div>
+          {/* Komponen lainnya */}
+          <CertificatesSection 
+            certificates={sampleCertificates} 
+            badges={sampleBadges} 
+          />
+          {/* Komponen lainnya */}
+        </div>
       </section>
 
       <section id="contact" className="h-screen flex items-center justify-center bg-slate-900">
