@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import { gsap } from 'gsap';
 
 export interface Certificate {
@@ -660,6 +661,31 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
   const modalRef = useRef<HTMLDivElement>(null);
   const badgeModalRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  
+  // Refs untuk animasi judul
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const titleControls = useAnimation();
+  
+  // Handle scroll animations untuk judul
+  useEffect(() => {
+    if (titleInView) {
+      titleControls.start("visible");
+    }
+  }, [titleInView, titleControls]);
+  
+  // GSAP effect untuk neon title animation
+  useEffect(() => {
+    if (titleRef.current) {
+      gsap.to(titleRef.current, {
+        textShadow: "0 0 5px #8B5CF6, 0 0 10px #8B5CF6, 0 0 15px #8B5CF6, 0 0 20px #3B82F6, 0 0 35px #3B82F6, 0 0 40px #3B82F6",
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+    }
+  }, []);
 
   // Filter certificates based on search term
   useEffect(() => {
@@ -709,7 +735,7 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
   }, [selectedBadge]);
 
   return (
-    <section className="certificates-section py-12 px-4 bg-gray-900 min-h-screen relative">
+    <section className="certificates-section py-12 px-4 min-h-screen relative">
       <style>
         {`
           .certificates-section {
@@ -912,6 +938,25 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
             z-index: -1;
           }
           
+          .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+          }
+          
+          .search-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 1rem;
+          }
+          
+          .certificate-grid {
+            min-height: 300px;
+          }
+          
           @media (max-width: 768px) {
             .certificate-grid {
               grid-template-columns: repeat(2, 1fr);
@@ -929,6 +974,10 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
             
             .search-input {
               max-width: 100%;
+            }
+            
+            .search-container {
+              justify-content: flex-start;
             }
           }
           
@@ -953,24 +1002,43 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
       />
 
       {/* Header dengan judul dan search */}
-      <div className="flex justify-between items-center mb-8">
+      <motion.div 
+        ref={titleRef}
+        className="text-center mb-16"
+        initial="hidden"
+        animate={titleControls}
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" }
+          }
+        }}
+        style={{ 
+          color: '#B19EEF',
+          textShadow: '0 0 5px #8B5CF6, 0 0 10px #8B5CF6, 0 0 15px #8B5CF6, 0 0 20px #3B82F6, 0 0 35px #3B82F6, 0 0 40px #3B82F6'
+        }}
+      >
         <TextType 
           text={["My Certificates", "Achievements", "Credentials"]}
           typingSpeed={75}
           pauseDuration={1500}
           showCursor={true}
           cursorCharacter="|"
-          className="text-3xl font-bold neon-text"
+          className="text-4xl md:text-5xl font-bold text-center font-orbitron"
         />
         
-        <input
-          type="text"
-          placeholder="Cari sertifikat..."
-          className="search-input"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Cari sertifikat..."
+            className="search-input"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      </motion.div>
 
       {/* Certificates Grid */}
       <div className="certificate-grid grid grid-cols-4 gap-4 mb-12" ref={gridRef}>
@@ -994,7 +1062,7 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
                 <h3 className="text-white font-semibold text-sm truncate">{cert.title}</h3>
                 <p className="text-gray-400 text-xs">{cert.issuer}</p>
               </div>
-              <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button 
                   className="view-btn"
                   onClick={() => handleCertificateClick(cert)}
@@ -1015,14 +1083,14 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
 
       {/* Badges Section - Tetap di posisinya meski tidak ada hasil pencarian */}
       <div className="mt-12">
-        <div className="flex justify-between items-center mb-6">
+        <div className="text-center items-center mb-6">
           <TextType 
             text={["Achievement Badges", "My Badges", "Recognition"]}
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter="|"
-            className="text-3xl font-bold neon-text"
+            className="text-3xl font-bold"
           />
         </div>
         

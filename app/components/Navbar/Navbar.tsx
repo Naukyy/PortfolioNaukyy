@@ -239,6 +239,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             filter: blur(7px) contrast(100) blur(0);
             mix-blend-mode: lighten;
             background: transparent;
+            overflow: visible !important;
           }
           
           .effect.filter::before {
@@ -368,14 +369,37 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             position: relative;
             z-index: 2;
           }
+
+          /* Fix untuk mencegah clipping */
+          .gooey-container {
+            position: relative;
+            overflow: visible !important;
+            height: auto;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+          }
+
+          .gooey-nav {
+            position: relative;
+            overflow: visible !important;
+            transform: none;
+            height: auto;
+          }
+
+          .gooey-list {
+            position: relative;
+            overflow: visible !important;
+            z-index: 100;
+          }
         `}
       </style>
       
-      <div className="relative" ref={containerRef}>
-        <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
+      <div className="gooey-container" ref={containerRef}>
+        <nav className="gooey-nav">
           <ul 
             ref={navRef} 
-            className="flex gap-8 list-none p-0 px-4 m-0 relative z-[3]" 
+            className="gooey-list flex gap-8 list-none p-0 px-4 m-0" 
             style={{ color: 'white', textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)' }}
           >
             {items.map((item, index) => {
@@ -427,32 +451,33 @@ const Navbar: React.FC<GooeyNavProps> = (props) => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 70 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        hasScrolled ? 'bg-slate-900/20 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        hasScrolled ? 'backdrop-blur-lg shadow-lg' : 'bg-transparent'
       }`}
+      style={{ height: '80px', minHeight: '80px', overflow: 'visible' }}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-center items-center">
+      <div className="container mx-auto px-6 py-4 flex justify-center items-center h-full">
         {/* Desktop Navigation with Gooey Effect */}
-        <div className="hidden md:block">
+        <div className="hidden md:block relative z-50 h-full flex items-center">
           <GooeyNav {...props} />
         </div>
         
         {/* Mobile Navigation Button */}
-        <div className="md:hidden absolute right-6">
+        <div className="md:hidden absolute right-6 z-50">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex flex-col space-y-1.5 focus:outline-none"
           >
             <motion.span
               animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-0.5 bg-slate-200"
+              className="block w-6 h-0.5"
             />
             <motion.span
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="block w-6 h-0.5 bg-slate-200"
+              className="block w-6 h-0.5"
             />
             <motion.span
               animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-0.5 bg-slate-200"
+              className="block w-6 h-0.5"
             />
           </button>
         </div>
@@ -466,7 +491,7 @@ const Navbar: React.FC<GooeyNavProps> = (props) => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-slate-900/95 backdrop-blur-md overflow-hidden"
+            className="md:hidden bg-slate-900/95 backdrop-blur-md overflow-hidden fixed top-16 left-0 w-full z-40"
           >
             <ul className="flex flex-col items-center py-6 space-y-6">
               {props.items.map((link) => {

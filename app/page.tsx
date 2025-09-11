@@ -23,6 +23,7 @@ import CircularGallery from "./components/CircularGallery/CircularGallery";
 import ProjectSection from "./components/ProjectSection/ProjectSection";
 import FAQSection from "./components/FAQSection/FAQSection";
 import CertificatesSection from "./components/CertificationSection/CertificationSection";
+import ContactSection from "./components/ContactSection/ContactSection";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
@@ -37,21 +38,155 @@ export default function Home() {
   const sampleCertificates = [
     {
       id: 1,
+      title: 'Responsive Web Design',
+      issuer: 'FreeCodeCamp',
+      date: '5 Juli 2025',
+      imageUrl: '/assets/S1.jpg',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://www.freecodecamp.org/certification/naufalzakyramadhan/responsive-web-design'
+    },
+     {
+      id: 2,
       title: 'Belajar Fundamental Front-End Web Development',
       issuer: 'Dicoding Indonesia',
       date: 'Januari 2023',
-      imageUrl: '/path/to/certificate-image.jpg',
+      imageUrl: '/assets/S2.jpg',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://www.freecodecamp.org/certification/naufalzakyramadhan/front-end-development-libraries'
+    },
+     {
+      id: 3,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
       description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
       credentialUrl: 'https://example.com/credential/123'
     },
-    // Tambahkan 24+ sertifikat lainnya di sini
+     {
+      id: 4,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 5,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 6,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 7,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 8,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 9,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 10,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 11,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 12,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 13,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+     {
+      id: 14,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+    {
+      id: 15,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
+    {
+      id: 16,
+      title: 'Belajar Fundamental Front-End Web Development',
+      issuer: 'Dicoding Indonesia',
+      date: 'Januari 2023',
+      imageUrl: '/assets/figma.png',
+      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      credentialUrl: 'https://example.com/credential/123'
+    },
   ];
 
   const sampleBadges = [
     {
       id: 1,
       title: 'JavaScript Expert',
-      imageUrl: '/path/to/badge-image.png',
+      imageUrl: '/assets/figma.png',
       description: 'Diberikan untuk penguasaan JavaScript yang luar biasa',
       achievementDate: 'Maret 2023'
     },
@@ -518,20 +653,22 @@ export default function Home() {
         </div>
       </section>
 
-      
-      <section id="certificates" className="h-screen flex items-center justify-center">
+      <section id="certificates" className="flex items-center justify-center">
         <div>
-          {/* Komponen lainnya */}
+          <br></br>
+          <br></br>
           <CertificatesSection 
             certificates={sampleCertificates} 
             badges={sampleBadges} 
           />
-          {/* Komponen lainnya */}
         </div>
       </section>
 
-      <section id="contact" className="h-screen flex items-center justify-center bg-slate-900">
-        <h2 className="text-4xl font-bold">Contact</h2>
+      <section id="contact" className="h-screen flex items-center justify-center">
+        <div className="App">
+          {/* Komponen lainnya */}
+          <ContactSection />
+        </div>
       </section>
       </ClickSpark>
     </main>
