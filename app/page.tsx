@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Lanyard from "./components/Lanyard/Lanyard";
 import PixelBlast from "./components/PixelBlast/PixelBlast";
 import TextType from "./components/TextType/TextType";
 import RotatingText from "./components/RotatingText/RotatingText";
@@ -495,7 +494,6 @@ export default function Home() {
             </div>
 
             <div className="col-span-6">
-              <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
             </div>
           </div>
         </div>
