@@ -375,7 +375,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             position: relative;
             overflow: visible !important;
             height: auto;
-            min-height: 60px;
+            min-height: 0px;
             display: flex;
             align-items: center;
           }

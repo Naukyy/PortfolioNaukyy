@@ -23,6 +23,7 @@ import ProjectSection from "./components/ProjectSection/ProjectSection";
 import FAQSection from "./components/FAQSection/FAQSection";
 import CertificatesSection from "./components/CertificationSection/CertificationSection";
 import ContactSection from "./components/ContactSection/ContactSection";
+import DecayCard from "./components/DecayCard/DecayCard";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiHtml5, SiCss3, SiBootstrap, SiSass, SiVuedotjs, SiAngular, SiNuxtdotjs, 
@@ -493,7 +494,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-span-6">
+            <div className="col-span-6 flex items-center justify-center">
+              <DecayCard 
+                width={400} 
+                height={300} 
+                image="/assets/gambar2.jpg"
+              />
             </div>
           </div>
         </div>
