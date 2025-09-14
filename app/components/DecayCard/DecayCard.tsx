@@ -28,8 +28,10 @@ const DecayCard: React.FC<DecayCardProps> = ({
 
   useEffect(() => {
     const lerp = (a: number, b: number, n: number): number => (1 - n) * a + n * b;
-    const map = (x: number, a: number, b: number, c: number, d: number): number => ((x - a) * (d - c)) / (b - a) + c;
-    const distance = (x1: number, x2: number, y1: number, y2: number): number => Math.hypot(x1 - x2, y1 - y2);
+    const map = (x: number, a: number, b: number, c: number, d: number): number =>
+      ((x - a) * (d - c)) / (b - a) + c;
+    const distance = (x1: number, x2: number, y1: number, y2: number): number =>
+      Math.hypot(x1 - x2, y1 - y2);
 
     const handleResize = (): void => {
       winsize.current = {
@@ -51,9 +53,21 @@ const DecayCard: React.FC<DecayCardProps> = ({
     };
 
     const render = () => {
-      let targetX = lerp(imgValues.imgTransforms.x, map(cursor.current.x, 0, winsize.current.width, -120, 120), 0.1);
-      let targetY = lerp(imgValues.imgTransforms.y, map(cursor.current.y, 0, winsize.current.height, -120, 120), 0.1);
-      let targetRz = lerp(imgValues.imgTransforms.rz, map(cursor.current.x, 0, winsize.current.width, -10, 10), 0.1);
+      let targetX = lerp(
+        imgValues.imgTransforms.x,
+        map(cursor.current.x, 0, winsize.current.width, -120, 120),
+        0.1
+      );
+      let targetY = lerp(
+        imgValues.imgTransforms.y,
+        map(cursor.current.y, 0, winsize.current.height, -120, 120),
+        0.1
+      );
+      let targetRz = lerp(
+        imgValues.imgTransforms.rz,
+        map(cursor.current.x, 0, winsize.current.width, -10, 10),
+        0.1
+      );
 
       const bound = 50;
       if (targetX > bound) targetX = bound + (targetX - bound) * 0.2;
@@ -105,55 +119,51 @@ const DecayCard: React.FC<DecayCardProps> = ({
   }, []);
 
   return (
-    <div ref={svgRef} className="relative" style={{ width: `${width}px`, height: `${height}px` }}>
-      <svg
-        viewBox="-60 -75 720 900"
-        preserveAspectRatio="xMidYMid slice"
-        className="relative w-full h-full block [will-change:transform]"
-      >
-        <filter id="imgFilter">
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.015"
-            numOctaves="5"
-            seed="4"
-            stitchTiles="stitch"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="turbulence1"
-          />
-          <feDisplacementMap
-            ref={displacementMapRef}
-            in="SourceGraphic"
-            in2="turbulence1"
-            scale="0"
-            xChannelSelector="R"
-            yChannelSelector="B"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="displacementMap3"
-          />
-        </filter>
-        <g>
-          <image
+    <div
+        ref={svgRef}
+        className="relative rounded-xl border-4 border-purple-500 shadow-[0_0_25px_6px_rgba(168,85,247,0.9)] overflow-hidden"
+        style={{ width: `${width}px`, height: `${height}px` }}
+        >
+        <svg
+            viewBox={`0 0 ${width} ${height}`}
+            preserveAspectRatio="xMidYMid slice"
+            className="w-full h-full block"
+        >
+            <filter id="imgFilter">
+            <feTurbulence
+                type="turbulence"
+                baseFrequency="0.015"
+                numOctaves="5"
+                seed="4"
+                stitchTiles="stitch"
+                result="turbulence1"
+            />
+            <feDisplacementMap
+                ref={displacementMapRef}
+                in="SourceGraphic"
+                in2="turbulence1"
+                scale="0"
+                xChannelSelector="R"
+                yChannelSelector="B"
+                result="displacementMap3"
+            />
+            </filter>
+            <image
             href={image}
             x="0"
             y="0"
-            width="600"
-            height="750"
+            width={width}
+            height={height}
             filter="url(#imgFilter)"
             preserveAspectRatio="xMidYMid slice"
-          />
-        </g>
-      </svg>
-      <div className="absolute bottom-[1.2em] left-[1em] tracking-[-0.5px] font-black text-[2.5rem] leading-[1.5em] first-line:text-[6rem]">
-        {children}
-      </div>
-    </div>
+            />
+        </svg>
+
+        <div className="absolute bottom-[1.2em] left-[1em] tracking-[-0.5px] font-black text-[2.5rem] 
+                        leading-[1.5em] first-line:text-[6rem] text-purple-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.9)]">
+            {children}
+        </div>
+        </div>
   );
 };
 

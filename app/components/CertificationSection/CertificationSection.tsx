@@ -883,8 +883,8 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
           
           .view-btn {
             background: rgba(var(--glow-color), 0.2);
-            border: 1px solid rgba(var(--glow-color), 0.5);
-            color: white;
+            border: 1px solid rgba(var(--glow-color), 1);
+            color: black;
             padding: 0.5rem 1rem;
             border-radius: 0.25rem;
             cursor: pointer;
@@ -893,8 +893,8 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
           
           .view-btn:hover {
             background: rgba(var(--glow-color), 0.4);
-            border-color: rgba(var(--glow-color), 0.8);
-            box-shadow: 0 0 10px rgba(var(--glow-color), 0.5);
+            border-color: rgba(var(--glow-color), 4);
+            box-shadow: 0 0 10px rgba(var(--glow-color), 1);
           }
           
           .details-btn {
@@ -1132,8 +1132,8 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
               className="certificate-image mb-4"
             />
             <h2 className="text-xl font-bold text-white mb-2">{selectedCertificate.title}</h2>
-            <p className="text-gray-300 mb-2">Diterbitkan oleh: {selectedCertificate.issuer}</p>
-            <p className="text-gray-400 mb-4">Tanggal: {selectedCertificate.date}</p>
+            <p className="text-gray-300 mb-2">Issued by: {selectedCertificate.issuer}</p>
+            <p className="text-gray-400 mb-4">Date: {selectedCertificate.date}</p>
             {selectedCertificate.description && (
               <p className="text-gray-300 mb-4">{selectedCertificate.description}</p>
             )}

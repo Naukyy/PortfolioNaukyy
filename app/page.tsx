@@ -39,146 +39,146 @@ export default function Home() {
     {
       id: 1,
       title: 'Responsive Web Design',
-      issuer: 'FreeCodeCamp',
-      date: '5 Juli 2025',
-      imageUrl: '/assets/S1.jpg',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      issuer: 'freeCodeCamp',
+      date: 'July 9, 2025',
+      imageUrl: '/assets/freeCodeCamp1.jpg',
+      description: 'This certificate verifies the completion of the foundational front-end web development curriculum, representing approximately 300 hours of work.',
       credentialUrl: 'https://www.freecodecamp.org/certification/naufalzakyramadhan/responsive-web-design'
     },
      {
       id: 2,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/S2.jpg',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      title: 'Front End Development Libraries',
+      issuer: 'freeCodeCamp',
+      date: 'July 15, 2025',
+      imageUrl: '/assets/freeCodeCamp2.jpg',
+      description: 'This certificate validates skills in building complex and interactive user interfaces using modern front-end libraries.',
       credentialUrl: 'https://www.freecodecamp.org/certification/naufalzakyramadhan/front-end-development-libraries'
     },
      {
       id: 3,
-      title: 'Belajar Fundamental Front-End Web Development',
+      title: 'Learning the Basics of Git with GitHub',
       issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      date: 'July 24, 2025',
+      imageUrl: '/assets/1Dicoding.png',
+      description: 'This certificate verifies the successful completion of a course on the fundamentals of Git version control and the GitHub platform.',
+      credentialUrl: 'https://www.dicoding.com/certificates/KEXL24Q0WZG2'
     },
      {
       id: 4,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'Intro to Software Engineering',
+      issuer: 'RevoU Indonesia',
+      date: 'July 18, 2025',
+      imageUrl: '/assets/RevoU1.png',
+      description: 'This certificate of attendance was awarded for participation in a 1-week certified online course on the fundamentals of Software Engineering.',
+      credentialUrl: 'https://drive.google.com/file/d/1JVEovW1oQn9YRVh7vRpaq8u3ST30SDls/view'
     },
      {
       id: 5,
-      title: 'Belajar Fundamental Front-End Web Development',
+      title: 'Programming Fundamentals for Software Development',
       issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      date: 'July 24, 2025',
+      imageUrl: '/assets/2Dicoding.png',
+      description: 'This certificate demonstrates the completion of a foundational course covering the essential principles of programming for software development.',
+      credentialUrl: 'https://www.dicoding.com/certificates/07Z6JLQK2XQR'
     },
      {
       id: 6,
-      title: 'Belajar Fundamental Front-End Web Development',
+      title: 'Learning the Basics of Structured Query Language (SQL)',
       issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      date: 'July 25, 2025',
+      imageUrl: '/assets/3Dicoding.png',
+      description: 'This certificate verifies the completion of a fundamental course on using Structured Query Language (SQL) to manage and query relational databases.',
+      credentialUrl: 'https://www.dicoding.com/certificates/07Z6JLQJJXQR'
     },
      {
       id: 7,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'Code Generations and Optimization',
+      issuer: 'Hacktiv8 Indonesia & IBM SkillsBuild',
+      date: 'August 7, 2025',
+      imageUrl: '/assets/1IBM.png',
+      description: 'This certificate was awarded for outstanding performance and project completion in the "Code Generations and Optimization" class, as part of the Student Developer Initiative in collaboration with IBM SkillsBuild.',
+      credentialUrl: 'https://drive.google.com/file/d/1JrdCfSuNwY6Xp2u7OFyULp62A6qp0Agy/view?usp=drivesdk'
     },
      {
       id: 8,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'Use Generative AI for Software Development',
+      issuer: 'IBM SkillsBuild',
+      date: 'August 5, 2025',
+      imageUrl: '/assets/2IBM.png',
+      description: 'This certificate verifies the completion of a course on the application of Generative AI tools and techniques within the software development lifecycle.',
+      credentialUrl: 'https://skills.yourlearning.ibm.com/activity/MDL-504'
     },
      {
       id: 9,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'Code Generation and Optimization Using IBM Granite',
+      issuer: 'IBM SkillsBuild',
+      date: 'August 8, 2025',
+      imageUrl: '/assets/3IBM.png',
+      description: 'This certificate validates the completion of a course focused on leveraging IBM Granite for automated code generation and performance optimization.',
+      credentialUrl: 'https://skills.yourlearning.ibm.com/activity/MDL-566'
     },
      {
       id: 10,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'Intro to Digital Marketing',
+      issuer: 'RevoU Indonesia',
+      date: 'August 1, 2025',
+      imageUrl: '/assets/RevoU2.png',
+      description: 'This certificate of completion was awarded for finishing a 1-week certified online course covering the fundamentals of Digital Marketing.',
+      credentialUrl: 'https://drive.google.com/file/d/1UlKv8sQxGcpTrPsXLXVWCfKLV7BVxtXr/view'
     },
      {
       id: 11,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
+      title: 'Internet Introduction',
+      issuer: 'MySkill Indonesia',
+      date: 'August 9, 2025',
+      imageUrl: '/assets/1MySkill.png',
+      description: 'This certificate verifies the completion of a foundational course on the basic principles of the internet as part of the website development curriculum.',
       credentialUrl: 'https://example.com/credential/123'
     },
      {
       id: 12,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'Intro to Data Analytics',
+      issuer: 'RevoU Indonesia',
+      date: 'August 8, 2025',
+      imageUrl: '/assets/RevoU3.png',
+      description: 'This certificate of completion was awarded for finishing a 1-week certified online course on the fundamental concepts of Data Analytics.',
+      credentialUrl: 'https://drive.google.com/file/d/1NFD6T3-86kw4aa_WS421NMod_JiPbADa/view'
     },
      {
       id: 13,
-      title: 'Belajar Fundamental Front-End Web Development',
+      title: 'Learning Prompting with the Experts',
       issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      date: 'July 26, 2025',
+      imageUrl: '/assets/4Dicoding.png',
+      description: 'This certificate of attendance was awarded for participating in an event focused on advanced prompting techniques with AI experts.',
+      credentialUrl: 'https://www.dicoding.com/users/5065601/events'
     },
      {
       id: 14,
-      title: 'Belajar Fundamental Front-End Web Development',
-      issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      title: 'IBM Granite Models for Software Development',
+      issuer: 'IBM SkillsBuild',
+      date: 'August 5, 2025',
+      imageUrl: '/assets/4IBM.png',
+      description: 'This certificate verifies the completion of a course on utilizing IBM Granite foundation models to enhance various aspects of the software development process.',
+      credentialUrl: 'https://skills.yourlearning.ibm.com/activity/MDL-567'
     },
     {
       id: 15,
-      title: 'Belajar Fundamental Front-End Web Development',
+      title: 'BPractical AI for Productivity',
       issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      date: 'July 26, 2025',
+      imageUrl: '/assets/5Dicoding.png',
+      description: 'This certificate demonstrates the successful completion of a course on applying practical AI tools and techniques to enhance personal and professional productivity.',
+      credentialUrl: 'https://www.dicoding.com/certificates/1RXYQ47WKZVM'
     },
     {
       id: 16,
-      title: 'Belajar Fundamental Front-End Web Development',
+      title: 'JavaScript Programming Fundamentals',
       issuer: 'Dicoding Indonesia',
-      date: 'Januari 2023',
-      imageUrl: '/assets/figma.png',
-      description: 'Sertifikat ini membuktikan penyelesaian course fundamental front-end web development.',
-      credentialUrl: 'https://example.com/credential/123'
+      date: 'August 1, 2025',
+      imageUrl: '/assets/6Dicoding.png',
+      description: 'This certificate verifies the successful completion of a foundational course covering the core principles and syntax of the JavaScript programming language.',
+      credentialUrl: 'https://www.dicoding.com/certificates/81P251YOYPOY'
     },
   ];
 
