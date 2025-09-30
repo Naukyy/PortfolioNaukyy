@@ -661,6 +661,62 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
   const modalRef = useRef<HTMLDivElement>(null);
   const badgeModalRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  // Kategorisasi sertifikat
+  const categorizeCertificates = (certs: Certificate[]) => {
+    const categories = {
+      'Front End': [] as Certificate[],
+      'Back End': [] as Certificate[],
+      'Artificial Intelligence': [] as Certificate[],
+      'Other': [] as Certificate[]
+    };
+
+    certs.forEach(cert => {
+      const title = cert.title.toLowerCase();
+      const issuer = cert.issuer.toLowerCase();
+
+      if (
+        title.includes('front end') ||
+        title.includes('javascript') ||
+        title.includes('responsive web design') ||
+        title.includes('html') ||
+        title.includes('css') ||
+        issuer.includes('freecodecamp')
+      ) {
+        categories['Front End'].push(cert);
+      } else if (
+        title.includes('back end') ||
+        title.includes('sql') ||
+        title.includes('database') ||
+        title.includes('node') ||
+        title.includes('express') ||
+        title.includes('django') ||
+        title.includes('laravel') ||
+        title.includes('php') ||
+        title.includes('spring') ||
+        cert.title.toLowerCase() === 'programming fundamentals for software development'
+      ) {
+        categories['Back End'].push(cert);
+      } else if (
+        title.includes('ai') ||
+        title.includes('artificial intelligence') ||
+        title.includes('generative') ||
+        title.includes('granite') ||
+        title.includes('prompting') ||
+        title.includes('machine learning') ||
+        title.includes('deep learning') ||
+        cert.title.toLowerCase() === 'code generations and optimization'
+      ) {
+        categories['Artificial Intelligence'].push(cert);
+      } else {
+        categories['Other'].push(cert);
+      }
+    });
+
+    return categories;
+  };
+
+  const categorizedCertificates = categorizeCertificates(filteredCertificates);
   
   // Refs untuk animasi judul
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -1040,46 +1096,61 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
         </div>
       </motion.div>
 
-      {/* Certificates Grid */}
-      <div className="certificate-grid grid grid-cols-4 gap-4 mb-12" ref={gridRef}>
-        {filteredCertificates.length > 0 ? (
-          filteredCertificates.map((cert) => (
-            <ParticleCard
-              key={`cert-${cert.id}`}
-              className="certificate-card certificate-card--border-glow rounded-lg overflow-hidden relative group"
-              particleCount={DEFAULT_PARTICLE_COUNT}
-              glowColor={DEFAULT_GLOW_COLOR}
-              enableTilt={true}
-              clickEffect={true}
-              enableMagnetism={true}
-            >
-              <img 
-                src={cert.imageUrl} 
-                alt={cert.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-3">
-                <h3 className="text-white font-semibold text-sm truncate">{cert.title}</h3>
-                <p className="text-gray-400 text-xs">{cert.issuer}</p>
-              </div>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <button 
-                  className="view-btn"
-                  onClick={() => handleCertificateClick(cert)}
-                >
-                  View
-                </button>
-              </div>
-            </ParticleCard>
-          ))
-        ) : (
-          <div className="col-span-4 text-center py-8">
-            <p className="text-white text-lg">
-              No certificates found for "{searchTerm}"
-            </p>
+      {/* Categorized Certificates Sections */}
+      {Object.entries(categorizedCertificates).map(([category, certs]) => (
+        <div key={category} className="mb-16">
+          <div className="text-center mb-8">
+            <TextType
+              text={[category, `${category} Certificates`, `${category} Skills`]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              className="text-2xl md:text-3xl font-bold"
+            />
           </div>
-        )}
-      </div>
+
+          <div className="certificate-grid grid grid-cols-4 gap-4" ref={category === 'Front End' ? gridRef : null}>
+            {certs.length > 0 ? (
+              certs.map((cert) => (
+                <ParticleCard
+                  key={`cert-${cert.id}`}
+                  className="certificate-card certificate-card--border-glow rounded-lg overflow-hidden relative group"
+                  particleCount={DEFAULT_PARTICLE_COUNT}
+                  glowColor={DEFAULT_GLOW_COLOR}
+                  enableTilt={true}
+                  clickEffect={true}
+                  enableMagnetism={true}
+                >
+                  <img
+                    src={cert.imageUrl}
+                    alt={cert.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-3">
+                    <h3 className="text-white font-semibold text-sm truncate">{cert.title}</h3>
+                    <p className="text-gray-400 text-xs">{cert.issuer}</p>
+                  </div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <button
+                      className="view-btn"
+                      onClick={() => handleCertificateClick(cert)}
+                    >
+                      View
+                    </button>
+                  </div>
+                </ParticleCard>
+              ))
+            ) : (
+              <div className="col-span-4 text-center py-8">
+                <p className="text-white text-lg">
+                  No {category.toLowerCase()} certificates found{searchTerm ? ` for "${searchTerm}"` : ''}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
 
       {/* Badges Section - Tetap di posisinya meski tidak ada hasil pencarian */}
       <div className="mt-12">

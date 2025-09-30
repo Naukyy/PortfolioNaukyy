@@ -164,7 +164,7 @@ export default function Home() {
     },
     {
       id: 15,
-      title: 'BPractical AI for Productivity',
+      title: 'Practical AI for Productivity',
       issuer: 'Dicoding Indonesia',
       date: 'July 26, 2025',
       imageUrl: '/assets/5Dicoding.png',
