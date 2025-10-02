@@ -180,6 +180,15 @@ export default function Home() {
       description: 'This certificate verifies the successful completion of a foundational course covering the core principles and syntax of the JavaScript programming language.',
       credentialUrl: 'https://www.dicoding.com/certificates/81P251YOYPOY'
     },
+    {
+      id: 17,
+      title: 'Prompt Engineering for Software Developers',
+      issuer: 'Dicoding Indonesia',
+      date: 'July 29, 2025',
+      imageUrl: '/assets/7Dicoding.png',
+      description: 'the practice of crafting precise and effective instructions for AI models to generate, debug, or optimize code and other development tasks.',
+      credentialUrl: 'https://www.dicoding.com/certificates/EYX4KRE45PDL'
+    },
   ];
 
   const sampleBadges = [

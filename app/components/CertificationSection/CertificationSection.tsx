@@ -705,7 +705,8 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
         title.includes('prompting') ||
         title.includes('machine learning') ||
         title.includes('deep learning') ||
-        cert.title.toLowerCase() === 'code generations and optimization'
+        cert.title.toLowerCase() === 'code generations and optimization' ||
+        cert.title.toLowerCase() === 'prompt engineering for software developers'
       ) {
         categories['Artificial Intelligence'].push(cert);
       } else {
