@@ -186,8 +186,17 @@ export default function Home() {
       issuer: 'Dicoding Indonesia',
       date: 'July 29, 2025',
       imageUrl: '/assets/7Dicoding.png',
-      description: 'the practice of crafting precise and effective instructions for AI models to generate, debug, or optimize code and other development tasks.',
+      description: 'The practice of crafting precise and effective instructions for AI models to generate, debug, or optimize code and other development tasks.',
       credentialUrl: 'https://www.dicoding.com/certificates/EYX4KRE45PDL'
+    },
+    {
+      id: 18,
+      title: 'Learn Data Science Basics',
+      issuer: 'Dicoding Indonesia',
+      date: 'August 2, 2025',
+      imageUrl: '/assets/8Dicoding.png',
+      description: 'This certificate verifies the completion of a foundational course on data science principles and techniques.',
+      credentialUrl: 'https://www.dicoding.com/certificates/1RXYQ4GLQZVM'
     },
   ];
 
