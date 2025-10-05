@@ -595,18 +595,9 @@ export default function Home() {
         <br></br>
         <br></br>
         <About />
-        <div style={{ height: '600px', position: 'relative' }}>
-          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02}/>
-        </div>
       </section>
-
-
-      <br></br>
-      <br></br>
-      <br></br>
       
       <section id="projects" className="min-h-screen px-4 py-16 md:px-10 md:py-20 bg-slate-950">
-        {/* LogoLoop sebagai pembatas section */}
         <div className="mb-16">
           <div style={{ height: '100px', position: 'relative', overflow: 'hidden' }}>
             <LogoLoop
@@ -672,6 +663,9 @@ export default function Home() {
         </div>
         <div>
           <FAQSection></FAQSection>
+        </div>
+        <div style={{ height: '600px', position: 'relative' }}>
+          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02}/>
         </div>
       </section>
 

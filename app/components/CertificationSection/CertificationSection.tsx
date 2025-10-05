@@ -792,7 +792,7 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
   }, [selectedBadge]);
 
   return (
-    <section className="certificates-section py-12 px-4 min-h-screen relative">
+    <section ref={gridRef} className="certificates-section py-12 px-4 min-h-screen relative">
       <style>
         {`
           .certificates-section {
@@ -1111,7 +1111,7 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
             />
           </div>
 
-          <div className="certificate-grid grid grid-cols-4 gap-4" ref={category === 'Front End' ? gridRef : null}>
+          <div className="certificate-grid grid grid-cols-4 gap-4">
             {certs.length > 0 ? (
               certs.map((cert) => (
                 <ParticleCard
