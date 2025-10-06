@@ -681,6 +681,7 @@ const CertificatesSection: React.FC<CertificatesSectionProps> = ({ certificates,
         title.includes('responsive web design') ||
         title.includes('html') ||
         title.includes('css') ||
+        title === 'data visualization fundamentals' ||
         issuer.includes('freecodecamp')
       ) {
         categories['Front End'].push(cert);

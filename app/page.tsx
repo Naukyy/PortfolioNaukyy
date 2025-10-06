@@ -198,6 +198,15 @@ export default function Home() {
       description: 'This certificate verifies the completion of a foundational course on data science principles and techniques.',
       credentialUrl: 'https://www.dicoding.com/certificates/1RXYQ4GLQZVM'
     },
+    {
+      id: 19,
+      title: 'Data Visualization Fundamentals',
+      issuer: 'Dicoding Indonesia',
+      date: 'August 5, 2025',
+      imageUrl: '/assets/9Dicoding.png',
+      description: 'This certificate confirms the completion of a fundamental course on the principles and techniques of effective data visualization.',
+      credentialUrl: 'https://www.dicoding.com/certificates/EYX4K7165PDL'
+    },
   ];
 
   const sampleBadges = [
